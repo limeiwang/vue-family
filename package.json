@@ -1,0 +1,33 @@
+{
+  "name": "vue-family",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-vue": "^7.20.0",
+    "husky": "^4.2.3",
+    "sass": "^1.43.3",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.21.0",
+    "typescript": "^4.4.4",
+    "vite": "^2.7.2",
+    "vite-plugin-windicss": "^1.6.2",
+    "vue-eslint-parser": "^7.11.0",
+    "vue-tsc": "^0.29.8",
+    "windicss": "^3.4.2"
+  }
+}
