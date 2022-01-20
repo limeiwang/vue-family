@@ -4,28 +4,24 @@
         <el-container h-full>
             <el-menu collapse router>
                 <el-menu-item index="/dashboard">
-                    <el-icon><dashicons:dashboard /></el-icon>
+                    <el-icon><i-dashicons:dashboard /></el-icon>
                     <template #title>仪表盘</template>
                 </el-menu-item>
                 <el-menu-item index="1">
-                    <el-icon><ri-article-line /></el-icon>
+                    <el-icon><i-ic:baseline-sell /></el-icon>
                     <template #title>one</template>
                 </el-menu-item>
                 <el-menu-item index="2">
-                    <el-icon><setting /></el-icon>
+                    <el-icon><i-ic:outline-sell /></el-icon>
                     <template #title>tow</template>
                 </el-menu-item>
                 <el-menu-item index="3">
-                    <el-icon><setting /></el-icon>
+                    <el-icon><i-bx:bxl-play-store /></el-icon>
                     <template #title>three</template>
                 </el-menu-item>
                 <el-menu-item index="4">
-                    <el-icon><setting /></el-icon>
+                    <el-icon><i-ant-design:setting-outlined /></el-icon>
                     <template #title>four</template>
-                </el-menu-item>
-                <el-menu-item index="5">
-                    <el-icon><setting /></el-icon>
-                    <template #title>admin</template>
                 </el-menu-item>
             </el-menu>
             <el-main>
@@ -41,7 +37,6 @@
 <script setup lang="ts">
 import { onUnmounted, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import { Setting, Edit } from '@element-plus/icons-vue'
 import Header from '@/components/Header.vue'
 // import { localGet } from '@/utils'
 

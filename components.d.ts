@@ -4,7 +4,6 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    'Dashicons:dashboard': typeof import('~icons/dashicons/dashboard')['default']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMain: typeof import('element-plus/es')['ElMain']
@@ -12,7 +11,12 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     Header: typeof import('./src/components/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    RiArticleLine: typeof import('~icons/ri/article-line')['default']
+    'IAntDesign:settingOutlined': typeof import('~icons/ant-design/setting-outlined')['default']
+    'IBx:bxlPlayStore': typeof import('~icons/bx/bxl-play-store')['default']
+    'IDashicons:dashboard': typeof import('~icons/dashicons/dashboard')['default']
+    'IIc:baselineSell': typeof import('~icons/ic/baseline-sell')['default']
+    'IIc:outlineSell': typeof import('~icons/ic/outline-sell')['default']
+    IRiArticleLine: typeof import('~icons/ri/article-line')['default']
   }
 }
 

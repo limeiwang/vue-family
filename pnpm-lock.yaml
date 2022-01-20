@@ -1,7 +1,6 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@element-plus/icons-vue': ^0.2.4
   '@faker-js/faker': ^6.0.0-alpha.3
   '@iconify/json': ^1.1.458
   '@typescript-eslint/eslint-plugin': ^5.1.0
@@ -32,7 +31,6 @@ specifiers:
   vue-tsc: ^0.29.8
 
 dependencies:
-  '@element-plus/icons-vue': 0.2.4_vue@3.2.26
   element-plus: 1.3.0-beta.5_vue@3.2.26
   vue: 3.2.26
   vue-router: 4.0.12_vue@3.2.26

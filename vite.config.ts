@@ -35,7 +35,7 @@ export default defineConfig({
         }),
         Components({
             resolvers: [ElementPlusResolver(), IconsResolver({
-                componentPrefix: '',
+                componentPrefix: 'i',
             })],
         }),
         vue(),
