@@ -1,81 +1,84 @@
-<script setup lang="ts">
-// import { ref } from 'vue'
-import { Location, Menu, Document } from '@element-plus/icons-vue'
-
-// const isCollapse = ref(true)
-// const handleOpen = (key: string, keyPath: string[]) => {
-//     console.log(key, keyPath)
-// }
-// const handleClose = (key: string, keyPath: string[]) => {
-//     console.log(key, keyPath)
-// }
-</script>
-
 <template>
-    <el-container>
-        <el-header class="flex items-center">
-            <div class="flex">
-                <img src="" alt="image">
-                <span>vue3 family</span>
-            </div>
-            <div class="flex-auto text-right">
-                <el-avatar
-                    src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-                ></el-avatar>
-            </div>
-        </el-header>
-        <el-container>
-            <el-menu
-                active-text-color="#ffd04b"
-                background-color="#545c64"
-                class="el-menu-vertical-demo"
-                default-active="2"
-                text-color="#fff"
-            >
-                <el-sub-menu index="1">
-                    <template #title>
-                        <el-icon><Location /></el-icon>
-                        <span>Navigator One</span>
-                    </template>
-                    <el-menu-item-group>
-                        <template #title><span>Group One</span></template>
-                        <el-menu-item index="1-1">item one</el-menu-item>
-                        <el-menu-item index="1-2">item two</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group title="Group Two">
-                        <el-menu-item index="1-3">item three</el-menu-item>
-                    </el-menu-item-group>
-                    <el-sub-menu index="1-4">
-                        <template #title><span>item four</span></template>
-                        <el-menu-item index="1-4-1">item one</el-menu-item>
-                    </el-sub-menu>
-                </el-sub-menu>
+    <main v-if="state.showMenu" h-full>
+        <Header />
+        <el-container h-full>
+            <el-menu collapse router>
+                <el-menu-item index="/dashboard">
+                    <el-icon><dashicons:dashboard /></el-icon>
+                    <template #title>仪表盘</template>
+                </el-menu-item>
+                <el-menu-item index="1">
+                    <el-icon><ri-article-line /></el-icon>
+                    <template #title>one</template>
+                </el-menu-item>
                 <el-menu-item index="2">
-                    <el-icon><Menu /></el-icon>
-                    <template #title>Navigator Two</template>
+                    <el-icon><setting /></el-icon>
+                    <template #title>tow</template>
                 </el-menu-item>
                 <el-menu-item index="3">
-                    <el-icon><Document /></el-icon>
-                    <template #title>Navigator Three</template>
+                    <el-icon><setting /></el-icon>
+                    <template #title>three</template>
+                </el-menu-item>
+                <el-menu-item index="4">
+                    <el-icon><setting /></el-icon>
+                    <template #title>four</template>
+                </el-menu-item>
+                <el-menu-item index="5">
+                    <el-icon><setting /></el-icon>
+                    <template #title>admin</template>
                 </el-menu-item>
             </el-menu>
             <el-main>
-                <router-view />
+                <router-view></router-view>
             </el-main>
         </el-container>
-    </el-container>
+    </main>
+    <main v-else>
+        <router-view></router-view>
+    </main>
 </template>
 
+<script setup lang="ts">
+import { onUnmounted, reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import { Setting, Edit } from '@element-plus/icons-vue'
+import Header from '@/components/Header.vue'
+// import { localGet } from '@/utils'
+
+const noMenu = ['/login']
+const router = useRouter()
+const state = reactive({
+    showMenu: true,
+    currentPath: '/dashboard',
+})
+
+const unwatch = router.beforeEach((to, from, next) => {
+    if (to.path == '/login') {
+        // 如果路径是 /login 则正常执行
+        next()
+    } else {
+        // 如果不是 /login，判断是否有 token
+        // eslint-disable-next-line no-lonely-if
+        // if (!localGet('token')) {
+        //     // 如果没有，则跳至登录页面
+        //     next({ path: '/login' })
+        // } else {
+        //     // 否则继续执行
+        next()
+        // }
+    }
+    state.showMenu = !noMenu.includes(to.path)
+    state.currentPath = to.path
+
+    onUnmounted(() => {
+        unwatch()
+    })
+})
+</script>
+
 <style>
-html,
-body,
 #app {
     width: 100%;
     height: 100%;
-}
-
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
 }
 </style>

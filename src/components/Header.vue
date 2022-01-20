@@ -1,9 +1,20 @@
 <template>
-    <el-header class="flex">
-        <div>logo</div>
-        <nav class="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>
-        </nav>
-    </el-header>
+    <header
+        w-full
+        h-16
+        flex
+        justify-center
+        items-center
+        bg-gradient-to-r
+        from-green-400
+        to-blue-500
+    >
+        <h1>
+            Hello Vite, Vue-next, Unocss, {{ customName }}
+        </h1>
+    </header>
 </template>
+
+<script setup>
+const customName = 'Now!'
+</script>
