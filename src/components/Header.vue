@@ -16,5 +16,12 @@
 </template>
 
 <script setup>
+import { useUserStore } from '@/stores/user'
+
+const user = useUserStore()
+
 const customName = 'Now!'
+
+console.log(user.name)
+
 </script>

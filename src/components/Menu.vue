@@ -1,7 +1,7 @@
 <template>
     <el-aside :style="{width:collpaseWidth}" border-r border-gray-300>
         <!--左侧导航栏-->
-        <el-menu :collapse="isCollapse" router>
+        <el-menu :collapse="menu.isCollapse" router>
             <el-menu-item index="/dashboard">
                 <el-icon><i-dashicons:dashboard /></el-icon>
                 <template #title>仪表盘</template>
@@ -22,23 +22,17 @@
                 <el-icon><i-ant-design:setting-outlined /></el-icon>
                 <template #title>four</template>
             </el-menu-item>
-            <!-- <el-menu-item index="isCollapse" @click="isCollapse = !isCollapse">
-                        <el-icon>
-                            <i-ant-design:menu-unfold-outlined v-if="isCollapse" />
-                            <i-ant-design:menu-fold-outlined v-else />
-                        </el-icon>
-                        <template #title>{{ isCollapse ? '展开' : '收起' }}</template>
-                    </el-menu-item> -->
         </el-menu>
     </el-aside>
 </template>
 
 <script setup lang="ts">
-import { reactive, computed } from 'vue'
+import { computed } from 'vue'
+import { useMenuStore } from '@/stores/menu'
 
-const isCollapse = reactive(true) // 决定左侧导航栏是否展开
+const menu = useMenuStore()
 
-const collpaseWidth = computed(() => (isCollapse ? '65px' : '200px'))
+const collpaseWidth = computed(() => (menu.isCollapse ? '65px' : '200px'))
 
 </script>
 
