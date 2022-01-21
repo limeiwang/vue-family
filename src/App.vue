@@ -1,43 +1,24 @@
 <template>
-    <main v-if="state.showMenu" h-full>
+    <el-container
+        v-if="state.showMenu"
+        class="h-full !flex !flex-col"
+    >
         <Header />
-        <el-container h-full>
-            <el-menu collapse router>
-                <el-menu-item index="/dashboard">
-                    <el-icon><i-dashicons:dashboard /></el-icon>
-                    <template #title>仪表盘</template>
-                </el-menu-item>
-                <el-menu-item index="1">
-                    <el-icon><i-ic:baseline-sell /></el-icon>
-                    <template #title>one</template>
-                </el-menu-item>
-                <el-menu-item index="2">
-                    <el-icon><i-ic:outline-sell /></el-icon>
-                    <template #title>tow</template>
-                </el-menu-item>
-                <el-menu-item index="3">
-                    <el-icon><i-bx:bxl-play-store /></el-icon>
-                    <template #title>three</template>
-                </el-menu-item>
-                <el-menu-item index="4">
-                    <el-icon><i-ant-design:setting-outlined /></el-icon>
-                    <template #title>four</template>
-                </el-menu-item>
-            </el-menu>
+        <el-main class="h-full !flex !flex-row">
+            <Menu />
             <el-main>
                 <router-view></router-view>
             </el-main>
-        </el-container>
-    </main>
-    <main v-else>
-        <router-view></router-view>
-    </main>
+        </el-main>
+    </el-container>
+    <router-view v-else></router-view>
 </template>
 
 <script setup lang="ts">
 import { onUnmounted, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import Header from '@/components/Header.vue'
+import Menu from '@/components/Menu.vue'
 // import { localGet } from '@/utils'
 
 const noMenu = ['/login']
@@ -64,10 +45,10 @@ const unwatch = router.beforeEach((to, from, next) => {
     }
     state.showMenu = !noMenu.includes(to.path)
     state.currentPath = to.path
+})
 
-    onUnmounted(() => {
-        unwatch()
-    })
+onUnmounted(() => {
+    unwatch()
 })
 </script>
 
@@ -75,5 +56,17 @@ const unwatch = router.beforeEach((to, from, next) => {
 #app {
     width: 100%;
     height: 100%;
+}
+
+.el-header,
+.el-main {
+    padding: 0;
+}
+
+.el-menu {
+    border: none;
+
+    /* height: 100%;
+    width: 100% !important; */
 }
 </style>

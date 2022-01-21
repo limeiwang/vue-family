@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ElAside: typeof import('element-plus/es')['ElAside']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElMain: typeof import('element-plus/es')['ElMain']
@@ -17,6 +18,7 @@ declare module 'vue' {
     'IIc:baselineSell': typeof import('~icons/ic/baseline-sell')['default']
     'IIc:outlineSell': typeof import('~icons/ic/outline-sell')['default']
     IRiArticleLine: typeof import('~icons/ri/article-line')['default']
+    Menu: typeof import('./src/components/Menu.vue')['default']
   }
 }
 
