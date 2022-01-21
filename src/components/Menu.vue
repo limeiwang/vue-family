@@ -1,7 +1,7 @@
 <template>
     <el-aside :style="{width:collpaseWidth}" border-r border-gray-300>
         <!--左侧导航栏-->
-        <el-menu :collapse="menu.isCollapse" router>
+        <el-menu :collapse="menu.isCollapse" router :collapse-transition="false">
             <el-menu-item index="/dashboard">
                 <el-icon><i-dashicons:dashboard /></el-icon>
                 <template #title>仪表盘</template>
@@ -41,5 +41,13 @@ const collpaseWidth = computed(() => (menu.isCollapse ? '65px' : '200px'))
     border: none;
     height: 100%;
     width: 100% !important;
+}
+
+.el-aside {
+    background: $primary-color;
+    transition: width .15s;
+    -webkit-transition: width .15s;
+    -moz-transition: width .15s;
+    -o-transition: width .15s;
 }
 </style>
