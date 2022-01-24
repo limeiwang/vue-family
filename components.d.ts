@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ConfirmBox: typeof import('./src/components/ConfirmBox.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElIcon: typeof import('element-plus/es')['ElIcon']
@@ -12,12 +13,15 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     Header: typeof import('./src/components/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    'IAntDesign:menuFoldOutlined': typeof import('~icons/ant-design/menu-fold-outlined')['default']
+    'IAntDesign:menuUnfoldOutlined': typeof import('~icons/ant-design/menu-unfold-outlined')['default']
     'IAntDesign:settingOutlined': typeof import('~icons/ant-design/setting-outlined')['default']
     'IBx:bxlPlayStore': typeof import('~icons/bx/bxl-play-store')['default']
     'IDashicons:dashboard': typeof import('~icons/dashicons/dashboard')['default']
+    'IDashicons:noAlt': typeof import('~icons/dashicons/no-alt')['default']
+    'IDashicons:yes': typeof import('~icons/dashicons/yes')['default']
     'IIc:baselineSell': typeof import('~icons/ic/baseline-sell')['default']
     'IIc:outlineSell': typeof import('~icons/ic/outline-sell')['default']
-    IRiArticleLine: typeof import('~icons/ri/article-line')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
   }
 }
