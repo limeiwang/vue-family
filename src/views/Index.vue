@@ -15,8 +15,8 @@
 
 <script setup lang="ts">
 import logo from '../assets/logo.png'
-import { useMenuStore } from '@/stores/menu'
-import ConfirmBox from '@/components/ConfirmBox.vue'
+import { useMenuStore } from '/@/stores/menu'
+import ConfirmBox from '/@/components/ConfirmBox.vue'
 
 const menu = useMenuStore()
 

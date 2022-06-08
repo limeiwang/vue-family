@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useMenuStore } from '@/stores/menu'
+import { useMenuStore } from '/@/stores/menu'
 
 const menu = useMenuStore()
 

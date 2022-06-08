@@ -4,7 +4,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 import ConfirmInput from '../toolkits/ConfirmInput.vue'
 

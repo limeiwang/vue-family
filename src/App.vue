@@ -17,9 +17,9 @@
 <script setup lang="ts">
 import { onUnmounted, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import Header from '@/components/Header.vue'
-import Menu from '@/components/Menu.vue'
-// import { localGet } from '@/utils'
+import Header from '/@/components/Header.vue'
+import Menu from '/@/components/Menu.vue'
+// import { localGet } from '/@/utils'
 
 const noMenu = ['/login']
 const router = useRouter()
